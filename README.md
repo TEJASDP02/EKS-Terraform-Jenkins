@@ -54,3 +54,71 @@ The PoC will cover the following:
 * Repo clone:- open your terminal and run this command:-   
                  **git clone [https://github.com/TEJASDP02/EKS-Terraform-Jenkins.git](https://github.com/TEJASDP02/EKS-Terraform-Jenkins.git)**  
 * See the below picture for the directory structure of the repository.  
+
+
+
+## **4\. Execution**
+
+### **4.1 Initialize Configuration**	
+
+* On the terminal go to this path:- EKS-Terraform-Jenkins/JenkinsServer  
+* Run the this command in your local terminal:- **terraform init**  
+* **`terraform init`** initializes a Terraform working directory by setting up the backend, installing provider plugins, and preparing modules for use.  
+
+
+
+### **4.2 Plan Deployment**
+
+* After initialization run this command:- **terraform plan**
+
+
+
+
+* The above is the output after running the terraform plan.
+
+### **4.3 Apply Configuration**
+
+* After plan is successfully completed, run this command:- **terraform apply**
+
+### **4.4 Evaluation**
+
+* After running the terraform apply, you can check in the aws portal to validate if services are created or not.
+
+### **4.5 Jenkins server setup and job creation**
+
+* You can access the jenkins server using the ip address of the EC2 instance created and complete the initial setup of jenkins.   
+* Create a new pipeline(CI/CD) job to automate the deployment of the EKS cluster and a web application on to the EKS Cluster.
+
+ **Snapshots of the pipeline script we have implemented**. (Script is available in the repository)
+
+
+
+ **Snapshot containing the overview of steps in the job we are running.**
+
+
+
+ **Snapshot of the EKS Cluster created.**
+
+
+
+ * You can access the wordpress application deployed using the DNS Name from the load balancer created.(This load balancer is created by the kubernetes service to expose the application to the outside world)
+
+
+
+ **Snapshot of the Load balancer created by our deployment.**
+
+
+
+ * **Accessing the Wordpress application using the DNS Name provided by the Load balancer**
+
+
+
+
+ ### 
+
+### 
+
+### **4.6. Destroy configuration**
+
+
+*  **terraform destroy \-** Use this command to delete all the resources which were provisioned using terraform.
